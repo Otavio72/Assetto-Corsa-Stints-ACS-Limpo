@@ -1,0 +1,31 @@
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
+
+
+# Arquivos temporários
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+
+# Subpastas de cache do Python
+**/__pycache__/
+
+
+# Configurações do VS Code
+.vscode/
+
+
+# Arquivos do Sistema operacional
+.DS_Store
+Thumbs.db
+
+
+# Arquivo sensíveis
+.env
+session_counter.txt
+
+
