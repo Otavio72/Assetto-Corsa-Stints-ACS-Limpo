@@ -5,12 +5,11 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import pandas as pd
 import google.generativeai as genai
 import tkinter as tk
-from functools import partial
 import ctypes
 import os
 from dotenv import load_dotenv
 import tkinter as tk
-from tkinter import scrolledtext, messagebox
+from tkinter import  messagebox
 
 load_dotenv()
 API_IA_KEY = os.getenv("GEMINIIA_API_KEY")
@@ -21,12 +20,12 @@ chat = model.start_chat(history=[])
 
 
 
-stint1f = []
-stint2f = []
-lap_T1f = ()
-lap_N1f = ()
-lap_T2f = ()
-lap_N2f = ()
+#stint1f = []
+#stint2f = []
+#lap_T1f = ()
+#lap_N1f = ()
+#lap_T2f = ()
+#lap_N2f = ()
 stints = []
 stintsIA = []
 PASTA_CSV = "DEMO/demo_stints"
@@ -56,17 +55,16 @@ def processar_csv(csv):
     return lap_T , lap_N
 
 
-
-def IA_processar(lap_T,lap_N):                
-    time_ia = []
-    for x in lap_T:
-        m = int(x / 60)
-        s = round((x % 60), 2)
-        time_ia.append(f"{m}:{s:05.2f}")
-    lap_ia = [int(x) for x in lap_N]
-    stint = f" voltas: {lap_ia} // Tempos: {time_ia}"
-    print(stint)
-    return stint
+#def IA_processar(lap_T,lap_N):                
+ #   time_ia = []
+  #  for x in lap_T:
+   #     m = int(x / 60)
+    #    s = round((x % 60), 2)
+     #   time_ia.append(f"{m}:{s:05.2f}")
+    #lap_ia = [int(x) for x in lap_N]
+    #stint = f" voltas: {lap_ia} // Tempos: {time_ia}"
+    
+    #return stint
 
 def img(track, car):
     track = Image.open(track).convert("RGBA")
@@ -78,7 +76,7 @@ def img(track, car):
 
 
 
-def mostrar_arquivo(stints_selecionados):
+def processar_arquivo(stints_selecionados):
     
     args1 = stints_selecionados[0]
     args2 = stints_selecionados[1]
@@ -91,22 +89,17 @@ def mostrar_arquivo(stints_selecionados):
             lap_T ,lap_N = processar_csv(csv)
             stints.append({"Tempo": lap_T, "Volta": lap_N})
             
+            #stintIA = IA_processar(lap_T,lap_N)
+            stintsIA.append(stints)
+            
         except Exception as e:
             messagebox.showerror("Erro ao abrir arquivo", f"Erro ao abrir {nome}:\n{e}")
             return
     
-    # Criar janela para mostrar dados
-    #janela_dados = tk.Toplevel()
-    #janela_dados.title(f"Conteúdo: {nome_arquivo}")
-    #janela_dados.geometry("600x400")
 
-    #texto = scrolledtext.ScrolledText(janela_dados)
-    #texto.pack(fill=tk.BOTH, expand=True)
+    #print(stintsIA)
+    GUI2(stints,stintsIA)
 
-    #texto.insert(tk.END, df.head(20).to_string())  # mostra as 20 primeiras linhas
-    #texto.config(state=tk.DISABLED)
-    print(stints[0])
-    print(stints[1])
 
 def img(track, car):
     track = Image.open(track).convert("RGBA")
@@ -114,6 +107,8 @@ def img(track, car):
     track.paste(car, (130,110), car)
     btn_wallpaper = track
     return btn_wallpaper
+
+
 
 def criar_menu():
     GUI4 = tkc.CTkToplevel()
@@ -155,8 +150,7 @@ def criar_menu():
         partes = arquivo_sem_extenção.split("__")
         car = partes[0]
         track = partes[1]
-        #print(car)
-        #print(track)
+
         if track in img_list_track and car in img_list_car:
             track_path = img_list_track[track]
             car_path = img_list_car[car]
@@ -175,7 +169,7 @@ def criar_menu():
         stint1 = 0
         stint2 = 0
         stints_selecionados.append(arquivo)
-        print(stints_selecionados)
+
            
         if len(stints_selecionados) == 1:
             stint1 = stints_selecionados[0]        
@@ -183,17 +177,17 @@ def criar_menu():
         if len(stints_selecionados) == 2:
             stint1 = stints_selecionados[0]
             stint2 = stints_selecionados[1]
-            #stints_selecionados.clear()
 
-    buttonstart = tkc.CTkButton(master=GUI4, text="Analisar",corner_radius=32,width=150, command=lambda: mostrar_arquivo(stints_selecionados))
+
+    buttonstart = tkc.CTkButton(master=GUI4, text="Analisar",corner_radius=32,width=150, command=lambda: processar_arquivo(stints_selecionados))
     buttonstart.pack(side="bottom", pady=10)
 
 
 
-def GUI2 ():
+def GUI2(stints,stintsIA):
     GUI_2 = tkc.CTkToplevel()
     GUI_2.title("ACS")
-    GUI_2.geometry("1000x450")
+    GUI_2.geometry("1300x550")
     
     intro = f"""
 Você é um engenheiro de corridas altamente qualificado, especializado em análise de desempenho em stints de pilotagem. Os pilotos enviaram os tempos de volta registrados, e sua tarefa consiste em:
@@ -207,8 +201,10 @@ Você é um engenheiro de corridas altamente qualificado, especializado em anál
 Seja técnico, claro e objetivo em suas respostas, garantindo precisão na análise e recomendações.
 
 ### Dados enviados pelos pilotos:
-- **Stint 1**: {stint1f}
-- **Stint 2**: {stint2f}
+- **Stint 1**: {stintsIA[0]}
+- **Stint 2**: {stintsIA[1]}
+
+**NÃO MOSTRE CALCULOS OU FUNCOES EM PYTHON APENAS A SAIDA**
 """
 
     
@@ -252,7 +248,7 @@ Seja técnico, claro e objetivo em suas respostas, garantindo precisão na anál
     send_button = tkc.CTkButton(master=chat_frame_input,text="Enviar",command=enviar_m, width=50, height=50, corner_radius=30)
     send_button.pack(side="right", padx=5, pady=0)
 
-    grafico(frame_right2)
+    grafico(frame_right2,stints)
 
 
 #def abrir_arquivos():
@@ -325,8 +321,6 @@ img_CSV_logo = tkc.CTkLabel(master=frame_2, text="", image=CSV_logo)
 img_CSV_logo.pack(side="right", padx=5)
 
 
-
-
 frame_left = tkc.CTkFrame(master=GUI, fg_color="white")
 frame_left.pack(side="left", fill="both", expand=True)
 
@@ -334,7 +328,13 @@ wallpaper_left = tkc.CTkImage(Image.open("DEMO\\img\\DALL·E-2025-01-02-14.35.pn
 img_label1 = tkc.CTkLabel(master=frame_left, text="", image=wallpaper_left)
 img_label1.pack(fill="both", expand = True)
 
-def grafico(frame_right2):
+def grafico(frame_right2,stints):
+
+    lap_N1f = stints[0]["Volta"]
+    lap_T1f = stints[0]["Tempo"]
+    
+    lap_N2f = stints[1]["Volta"]
+    lap_T2f = stints[1]["Tempo"]
 
     fig, ax = plt.subplots()
     plt.plot(lap_N1f, lap_T1f ,color='red', marker='o', label="Stint 1")
@@ -359,7 +359,7 @@ def grafico(frame_right2):
         plt.text(x2,y2, f"{mm2}:{ss2:02d}", ha='center', va='bottom')
     
     plt.xlabel("Volta")
-    plt.ylabel("Tempo (Segundos)")
+    plt.ylabel("Tempo")
     plt.title("Stints")
     plt.legend()
     
