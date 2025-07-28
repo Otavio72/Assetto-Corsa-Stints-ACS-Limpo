@@ -1,23 +1,22 @@
-# 🖨️ Impressa
+# 🏎️⚙️ Assetto Corsa Stints (ACS) Em desenvolvimento
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Otavio72/Impressa/blob/main/LICENSE)
 
-**Impressa** é uma aplicação web full stack desenvolvida para facilitar o processo de orçamentos e pedidos de impressão de documentos. O projeto nasceu após minha família e eu utilizarmos serviços de terceiros e percebermos a viabilidade de termos nossa própria gráfica.
+**ACS** durante a minha participação num campeonato de assetto corsa na WSS (Word Sim Series) nos treinos identifiquei a necessidade de uma medicao e analise dos stints(sequencias de voltas) e a partir disso veio a ideia do ACS
 
 ---
 
 ## 🛠️ Sobre o projeto
 
-Impressa permite que usuários enviem documentos nos formatos **PDF**, **PNG** e **JPEG**, com orçamentos automáticos baseados na quantidade de páginas e nas configurações escolhidas.
+é uma aplicação local que extrai tempos de volta do jogo assetto corsa envia para um servidor onde os dados sao armazenados num SQL e recuperados pelo programa principal que cria um grafico com 2 stints e envia para a API do GEMINI onde o mesmo esta interpretando um eng de corridas que analisa e da feedback dos stints via chatbot
 
 ### Funcionalidades principais:
 
-- 🧾 Orçamentos automatizados
-- 🛒 Carrinho de compras e checkout simulado
-- 🔐 Sistema de login e registro de usuários
-- 📚 Histórico de pedidos
-- 🌙 Modo escuro
-- 🧑‍💼 Painel de perfil e edição de usuário
+- 🧾 Extração de dados via **Shared Memory** baseado num mod template feito por **Hunter Vaners** https://github.com/huntervaners/Template_Assetto_Corsa_App
+- 🛒 Visualização de dados por grafico **matplotlib**
+- 🔐 Engenheiro Virtual com **GEMINI**
+- 📚 Armazenamento de dados com **MySql**
+- 🌙 Interface **CustomTkinter**
 
 ---
 
@@ -33,7 +32,7 @@ Impressa permite que usuários enviem documentos nos formatos **PDF**, **PNG** e
 
 ---
 
-## 🗂️ Modelo conceitual
+## 🗂️ GIFs
 
 ![Modelo Conceitual](https://github.com/Otavio72/assets/blob/main/modelo_impressa.png)
 
@@ -43,13 +42,12 @@ Impressa permite que usuários enviem documentos nos formatos **PDF**, **PNG** e
 
 ### 🔙 Back end
 - Python
-- Django
 
-### 🎨 Front end
-- HTML
-- CSS
-- JavaScript
-- Bootstrap 5
+### 🔙 Banco de dados
+- MySQL
+
+### 🎨 Interface
+- CustomTkinter
 
 ---
 
