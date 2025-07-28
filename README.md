@@ -90,7 +90,7 @@ Para contornar essa limitação, foi criada a versão ACSvDEMO, baseada em uma v
 
 ```bash
 # clonar repositório
-git clone https://github.com/Otavio72/Impressa
+git clone https://github.com/Otavio72/Assetto-Corsa-Stints-ACS-.git
 
 Ative o ambiente virtual:
   python -m venv .venv
