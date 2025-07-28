@@ -2,21 +2,23 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Otavio72/Assetto-Corsa-Stints-ACS-/blob/main/LICENSE)
 
-**ACS** durante a minha participação num campeonato de assetto corsa na WSS (Word Sim Series) nos treinos identifiquei a necessidade de uma medicao e analise dos stints(sequencias de voltas) e a partir disso veio a ideia do ACS
+**ACS** surgiu durante minha participação em um campeonato da **World Sim Series (WSS)**. Nos treinos, percebi a necessidade de uma análise mais detalhada dos stints (sequências de voltas), o que inspirou a criação deste projeto.
 
 ---
 
 ## 🛠️ Sobre o projeto
 
-é uma aplicação local que extrai tempos de volta do jogo assetto corsa envia para um servidor onde os dados sao armazenados num SQL e recuperados pelo programa principal que cria um grafico com 2 stints e envia para a API do GEMINI onde o mesmo esta interpretando um eng de corridas que analisa e da feedback dos stints via chatbot
+O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assetto Corsa, envia os tempos de volta para um servidor com banco de dados **MySQL**, e os recupera para gerar gráficos comparativos entre dois stints. Esses dados são enviados à API do **GEMINI**, onde um "engenheiro virtual" interpreta os resultados e fornece feedback técnico via chatbot.
+
 
 ### Funcionalidades principais:
 
-- 🧾 Extração de dados via **Shared Memory** baseado num mod template feito por **Hunter Vaners** https://github.com/huntervaners/Template_Assetto_Corsa_App
-- 🛒 Visualização de dados por grafico **matplotlib**
-- 🔐 Engenheiro Virtual com **GEMINI**
-- 📚 Armazenamento de dados com **MySql**
-- 🌙 Interface **CustomTkinter**
+- 🧾 Extração de dados via **Shared Memory**, com base no mod template de [Hunter Vaners](https://github.com/huntervaners/Template_Assetto_Corsa_App)
+- 📈 Geração de gráficos comparativos com **Matplotlib**
+- 🤖 Feedback técnico com **GEMINI API**
+- 💾 Armazenamento em banco de dados **MySQL**
+- 🌙 Interface gráfica com **CustomTkinter**
+- 🔌 Comunicação entre cliente e servidor via Sockets com select para conexões simultâneas
 
 ---
 
