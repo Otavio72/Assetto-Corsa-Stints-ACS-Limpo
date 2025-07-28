@@ -62,6 +62,14 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 
 ## ⚙️ Como executar o projeto
 
+### ATENÇÃO
+Para rodar o ACSv9 e necessario ter o jogo assetto corsa instalado para que os dados sejam extraidos caso
+contrario o programa nao vai funcionar
+por conta desse problema desenvolvi o ACSvDEMO baseado numa versao anterior do acs que utilizava arquivos .csv
+dentro da pasta DEMO esta residido o ACSvDEMO com arquivos .csv para serem selecionados e analisados
+adptei o menu de selecao de stints para funcionar de forma similar a versao completa
+
+
 ### ✅ Pré-requisitos
 
 - Python 3.11+
