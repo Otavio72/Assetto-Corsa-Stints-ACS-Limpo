@@ -49,6 +49,9 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 ## Datalogger
 ![Datalogger](https://github.com/Otavio72/assets/blob/main/gif3.gif)
 
+## Demonstração dentro do jogo
+[Assista à demonstração no YouTube](https://www.youtube.com/watch?v=mdHSS1vnZvM)
+
 ---
 
 ## 🚀 Tecnologias utilizadas
