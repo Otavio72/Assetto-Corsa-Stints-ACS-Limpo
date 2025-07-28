@@ -22,13 +22,20 @@
 
 ## 💻 Layout da aplicação
 
-### Página inicial e orçamento
-![Página Inicial](https://github.com/Otavio72/assets/blob/main/impressa1.png)
-![Orçamento](https://github.com/Otavio72/assets/blob/main/impressa4.png)
+### Página inicial
+![Página Inicial](https://github.com/Otavio72/assets/blob/main/acs1.png)
 
-### Sobre o projeto e modo escuro
-![Sobre o projeto](https://github.com/Otavio72/assets/blob/main/impressa5.png)
-![Modo escuro](https://github.com/Otavio72/assets/blob/main/impressaescuro.png)
+### Página de Status
+![Página de Status](https://github.com/Otavio72/assets/blob/main/acs2.png)
+
+### Menu de Stints
+![Menu de Stints](https://github.com/Otavio72/assets/blob/main/acs3.png)
+
+### Pagina de analise
+![Pagina de analise](https://github.com/Otavio72/assets/blob/main/acs4.png)
+
+### Datalogger no jogo
+![Datalogger no jogo](https://github.com/Otavio72/assets/blob/main/acs5.png)
 
 ---
 
