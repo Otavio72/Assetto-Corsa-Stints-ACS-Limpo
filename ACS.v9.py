@@ -325,9 +325,9 @@ frame_right.pack(side="right", fill="both", expand=True)
 frame_1 = tkc.CTkFrame(master=frame_right, fg_color="white")
 frame_1.pack(padx=10, pady=80)
 
-ACS_logo = tkc.CTkImage(Image.open(r"img\Screenshot 2025-01-09 170933.png"), size=(150,130))
+ACS_logo = tkc.CTkImage(Image.open(r"img\ACSv9_logo.png"), size=(160,130))
 img_label_logo = tkc.CTkLabel(master=frame_1, text="", image=ACS_logo)
-img_label_logo.pack(padx=30, pady=0)
+img_label_logo.pack(padx=30, pady=5)
 
 
 btn1 = tkc.CTkButton(master=frame_1, text="Enviar", corner_radius=32,width=150, fg_color="black", command=abrir_arquivos)
@@ -338,17 +338,11 @@ btn2.pack(pady=5, padx=10)
 
 frame_2 = tkc.CTkFrame(master=frame_right, fg_color="white")
 frame_2.pack(side="bottom")
-label_csv = tkc.CTkLabel(master=frame_2, text="Apenas arquivos .csv",text_color="black")
-label_csv.pack(side="left", padx=5, pady=10)
-
-CSV_logo = tkc.CTkImage(Image.open(r"img\csv_9496460.png"), size=(30,30))
-img_CSV_logo = tkc.CTkLabel(master=frame_2, text="", image=CSV_logo)
-img_CSV_logo.pack(side="right", padx=5)
 
 frame_left = tkc.CTkFrame(master=GUI, fg_color="white")
 frame_left.pack(side="left", fill="both", expand=True)
 
-wallpaper_left = tkc.CTkImage(Image.open(r"img\DALL·E-2025-01-02-14.35.png"), size=(400,400))
+wallpaper_left = tkc.CTkImage(Image.open(r"img\Wallpaper.png"), size=(400,400))
 img_label1 = tkc.CTkLabel(master=frame_left, text="", image=wallpaper_left)
 img_label1.pack(fill="both", expand = True)
 

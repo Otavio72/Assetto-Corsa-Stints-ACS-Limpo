@@ -10,6 +10,7 @@ import os
 from dotenv import load_dotenv
 import tkinter as tk
 from tkinter import  messagebox
+import threading
 
 load_dotenv()
 API_IA_KEY = os.getenv("GEMINIIA_API_KEY")
@@ -19,13 +20,6 @@ model = genai.GenerativeModel('gemini-2.0-flash')
 chat = model.start_chat(history=[])
 
 
-
-#stint1f = []
-#stint2f = []
-#lap_T1f = ()
-#lap_N1f = ()
-#lap_T2f = ()
-#lap_N2f = ()
 stints = []
 stintsIA = []
 PASTA_CSV = "DEMO/demo_stints"
@@ -55,17 +49,6 @@ def processar_csv(csv):
     return lap_T , lap_N
 
 
-#def IA_processar(lap_T,lap_N):                
- #   time_ia = []
-  #  for x in lap_T:
-   #     m = int(x / 60)
-    #    s = round((x % 60), 2)
-     #   time_ia.append(f"{m}:{s:05.2f}")
-    #lap_ia = [int(x) for x in lap_N]
-    #stint = f" voltas: {lap_ia} // Tempos: {time_ia}"
-    
-    #return stint
-
 def img(track, car):
     track = Image.open(track).convert("RGBA")
     car = Image.open(car).convert("RGBA").resize((300,200))
@@ -88,17 +71,14 @@ def processar_arquivo(stints_selecionados):
             csv = pd.read_csv(caminho, sep='\t')
             lap_T ,lap_N = processar_csv(csv)
             stints.append({"Tempo": lap_T, "Volta": lap_N})
-            
-            #stintIA = IA_processar(lap_T,lap_N)
+        
             stintsIA.append(stints)
             
         except Exception as e:
             messagebox.showerror("Erro ao abrir arquivo", f"Erro ao abrir {nome}:\n{e}")
             return
     
-
-    #print(stintsIA)
-    GUI2(stints,stintsIA)
+    return stints, stintsIA
 
 
 def img(track, car):
@@ -107,7 +87,6 @@ def img(track, car):
     track.paste(car, (130,110), car)
     btn_wallpaper = track
     return btn_wallpaper
-
 
 
 def criar_menu():
@@ -119,6 +98,7 @@ def criar_menu():
 
     row_num = 0
     col_num = 0
+    global stints_selecionados
     stints_selecionados = []
 
     stints_frame = tkc.CTkScrollableFrame(master=GUI4,fg_color="black",width=400,height=300)
@@ -179,8 +159,37 @@ def criar_menu():
             stint2 = stints_selecionados[1]
 
 
-    buttonstart = tkc.CTkButton(master=GUI4, text="Analisar",corner_radius=32,width=150, command=lambda: processar_arquivo(stints_selecionados))
-    buttonstart.pack(side="bottom", pady=10)
+    container = tkc.CTkFrame(master=GUI4, fg_color="transparent")
+    container.pack(pady=10)
+
+    carregamento_label = tkc.CTkLabel(master=container, text="")
+    carregamento_label.pack(padx=10,side="right")
+    global carregando
+    carregando = False
+
+    
+    def iniciar_carregamento():
+        global carregando
+        carregando = True
+        carregamento_label.configure(text="⏳ Carregando")
+        threading.Thread(target=processar_com_carregamento).start()
+
+    
+    def iniciar_GUI2(stints, stintsIA):
+        GUI2(stints, stintsIA)
+        GUI4.after(0, parar_carregamento)
+
+    def processar_com_carregamento():
+        stints, stintsIA = processar_arquivo(stints_selecionados)
+        GUI4.after(0, lambda: iniciar_GUI2(stints, stintsIA))
+
+    def parar_carregamento():
+        global carregando
+        carregando = False
+        carregamento_label.configure(text="✅ Análise concluída")
+        
+    buttonstart = tkc.CTkButton(master=container, text="Analisar",corner_radius=32,width=150, command=iniciar_carregamento)
+    buttonstart.pack(side="left", padx=10)
 
 
 
@@ -204,14 +213,13 @@ Seja técnico, claro e objetivo em suas respostas, garantindo precisão na anál
 - **Stint 1**: {stintsIA[0]}
 - **Stint 2**: {stintsIA[1]}
 
-**NÃO MOSTRE CALCULOS OU FUNCOES EM PYTHON APENAS A SAIDA**
+**NÃO MOSTRE CALCULOS OU FUNCÕES EM PYTHON APENAS A SAIDA**
 """
 
     
     frame_right2 = tkc.CTkFrame(master=GUI_2, fg_color="#474a51")
     frame_right2.pack(side="right", pady=10,padx=10)
     
-#////////////////////////////////////////////////////////////////////
 
     frame_left2 = tkc.CTkFrame(master=GUI_2, fg_color="#2b2b2b", corner_radius=10)
     frame_left2.pack(side="left", padx=20,pady=20)
@@ -251,47 +259,6 @@ Seja técnico, claro e objetivo em suas respostas, garantindo precisão na anál
     grafico(frame_right2,stints)
 
 
-#def abrir_arquivos():
- #   global lap_T1f, lap_N1f, lap_T2f, lap_N2f
-  #  arqs = filedialog.askopenfilenames(
-   # title="ABRIR ARQUIVOS",
-   # filetypes=[("Arquivos CSV", "*.csv"), ("Todos os arquivos", "*.*")],
-   # initialdir="C:/")
-
-   # if len(arqs) > 2:
-    #    ctypes.windll.user32.MessageBoxW(0,f"Apenas 2 arquivos",f"ARQUIVO INVALIDO",0x10)
-     #   return
-    #else:
-     #    pass
-
-    #for arquivo in arqs:
-     #   if not arquivo.endswith(".csv"):
-      #      ctypes.windll.user32.MessageBoxW(0,f"{arquivo}",f"ARQUIVO INVALIDO",0x10)
-       #     return  
-        #else:
-         #   continue
-
-    #arquivo1 = arqs[0] 
-    #arquivo2 = arqs[1]
-    #csv1 = pd.read_csv(arquivo1, delimiter='\t')
-    #csv2 = pd.read_csv(arquivo2, delimiter='\t')
-    #lap_T1 , lap_N1 = processar_csv(csv1)
-    #lap_T2 , lap_N2 = processar_csv(csv2)
-    #stint1 = IA_processar(lap_T1, lap_N1)
-    #stint2 = IA_processar(lap_T2, lap_N2)
-    #stint1f.append(stint1)
-    #stint2f.append(stint2)
-    #lap_T1f = tuple(lap_T1)
-    #lap_T2f = tuple(lap_T2)
-    #lap_N1f = tuple(lap_N1)
-    #lap_N2f = tuple(lap_N2)
-    #GUI2()
-    #abrir_arquivos()
-    #menustinst()
-    #return lap_T1f , lap_N1f, lap_T2f, lap_N2f
-
-
-
 GUI = tkc.CTk()
 GUI.geometry("500x400")
 GUI.title("ACS")
@@ -303,9 +270,9 @@ frame_right.pack(side="right", fill="both", expand=True)
 frame_1 = tkc.CTkFrame(master=frame_right, fg_color="white")
 frame_1.pack(padx=10, pady=100)
 
-ACS_logo = tkc.CTkImage(Image.open("DEMO\\img\\ACS_icon.png"), size=(150,130))
+ACS_logo = tkc.CTkImage(Image.open("DEMO\\img\\ACSvDEMO_logo.png"), size=(160,130))
 img_label_logo = tkc.CTkLabel(master=frame_1, text="", image=ACS_logo)
-img_label_logo.pack(padx=30, pady=0)
+img_label_logo.pack(padx=30, pady=5)
 
 
 btn1 = tkc.CTkButton(master=frame_1, text="Enviar", corner_radius=32,width=150, fg_color="black", command=criar_menu)
@@ -316,7 +283,7 @@ frame_2.pack(side="bottom")
 label_csv = tkc.CTkLabel(master=frame_2, text="Apenas arquivos .csv",text_color="black")
 label_csv.pack(side="left", padx=5)
 
-CSV_logo = tkc.CTkImage(Image.open("DEMO\\img\\csv_9496460.png"), size=(30,30))
+CSV_logo = tkc.CTkImage(Image.open("DEMO\\img\\CSV_logo.png"), size=(30,30))
 img_CSV_logo = tkc.CTkLabel(master=frame_2, text="", image=CSV_logo)
 img_CSV_logo.pack(side="right", padx=5)
 
@@ -324,7 +291,7 @@ img_CSV_logo.pack(side="right", padx=5)
 frame_left = tkc.CTkFrame(master=GUI, fg_color="white")
 frame_left.pack(side="left", fill="both", expand=True)
 
-wallpaper_left = tkc.CTkImage(Image.open("DEMO\\img\\DALL·E-2025-01-02-14.35.png"), size=(400,400))
+wallpaper_left = tkc.CTkImage(Image.open("DEMO\\img\\Wallpaper.png"), size=(400,400))
 img_label1 = tkc.CTkLabel(master=frame_left, text="", image=wallpaper_left)
 img_label1.pack(fill="both", expand = True)
 
@@ -349,7 +316,6 @@ def grafico(frame_right2,stints):
         plt.text(x,y, f"\n{mm}:{ss:02d}", ha='center', va='top')
         
     
-    #mostrar o tempo das voltas nos pontos do grafico de linha 2
     for i2, (x2 , y2) in enumerate(zip(lap_N2f, lap_T2f)):
         if y2 < 15:
              plt.text(x2 , y2 , " Fim do stint ", ha="left", va="bottom")
