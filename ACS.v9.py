@@ -44,7 +44,6 @@ timegra2f = []
 
 server_logs = ""
 
-#car_name = "" 
 
 
 def ACS_client():
@@ -348,7 +347,7 @@ img_label1.pack(fill="both", expand = True)
 
 
 
-def grafico(frame_right2,GUI_2,car_names):
+def grafico(frame_right2,GUI_2):
     
 
     def limpar_canvas():

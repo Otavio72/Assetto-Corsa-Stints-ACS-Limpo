@@ -26,6 +26,7 @@ width, height = 300 , 300 # width and height of the app's window
 
 simInfo = SimInfo()
 
+lapcount = 0 
 
 l_gas = 0
 gas = 0
@@ -44,13 +45,13 @@ gear = 0
 def acMain(ac_version):
 
  
-    global appWindow , l_lapcount,status,l_status, l_gas, l_brake, l_steer, l_gear, l_lapTime, l_lastlap, l_car_name, l_track_name # <- you'll need to update your window in other functions.
+    global appWindow , l_gas, l_brake, l_steer, l_gear # <- you'll need to update your window in other functions.
 
     appWindow = ac.newApp(appName)
     ac.setTitle(appWindow, appName)
     ac.setSize(appWindow, width, height)
     ac.setBackgroundOpacity(appWindow,0)
-    ac.setBackgroundTexture(appWindow,"apps/python/Template_Assetto_Corsa_App/logo_ACS.png")
+
     
     
     l_gas = ac.addLabel(appWindow, "Gas: 0")
@@ -112,7 +113,7 @@ def acShutdown():
 
 
 def acUpdate(deltaT):#-------------------------------- AC UPDATE
-   global l_lapcount, lapcount, l_gas, gas, l_brake, brake, l_steer, steer, l_gear, gear, l_lapTime, lapTime, l_lastlap, lastlap, l_car_name, car_name, l_track_name, track_name
+   global lapcount, l_gas, gas, l_brake, brake, l_steer, steer, l_gear, gear, lapTime, lastlap, car_name, track_name
 
    Gas = ac.getCarState(0, acsys.CS.Gas)
    gas = Gas

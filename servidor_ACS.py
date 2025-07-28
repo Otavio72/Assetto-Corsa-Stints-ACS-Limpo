@@ -56,7 +56,7 @@ while conexao_ativa:
             cliente, endereco = servidor.accept()
             clientes.append(cliente)
             cliente.send(f"Code=00".encode('utf-8'))
-            print(clientes)
+            
             if len(clientes) > 2:
                 client1 = clientes[1]
                 client1.send(f"Code=01".encode('utf-8'))
