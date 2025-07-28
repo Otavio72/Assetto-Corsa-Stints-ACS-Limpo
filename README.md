@@ -1,6 +1,6 @@
 # 🏎️⚙️ Assetto Corsa Stints (ACS) Em desenvolvimento
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Otavio72/Impressa/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Otavio72/Assetto-Corsa-Stints-ACS-/blob/main/LICENSE)
 
 **ACS** durante a minha participação num campeonato de assetto corsa na WSS (Word Sim Series) nos treinos identifiquei a necessidade de uma medicao e analise dos stints(sequencias de voltas) e a partir disso veio a ideia do ACS
 
