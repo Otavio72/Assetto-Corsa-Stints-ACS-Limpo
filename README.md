@@ -92,6 +92,16 @@ Para contornar essa limitação, foi criada a versão ACSvDEMO, baseada em uma v
 # clonar repositório
 git clone https://github.com/Otavio72/Assetto-Corsa-Stints-ACS-.git
 
+Ative o ambiente virtual:
+  python -m venv .venv
+
+No Windows (PowerShell):
+  ```powershell
+  .venv\Scripts\Activate.ps1
+
+No Linux/macOS:
+  source .venv/bin/activate
+
 # acesse o diretorio
 Assetto-Corsa-Stints-ACS-\DEMO\
 
