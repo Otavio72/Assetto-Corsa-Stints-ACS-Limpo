@@ -40,9 +40,6 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 
 ## 🗂️ GIFs
 
-## Paginas do ACS
-![Paginas do ACS](assets/gif1.gif)
-
 ## Datalogger
 ![Datalogger](assets/gif3.gif)
 
