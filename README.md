@@ -67,7 +67,7 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 - É necessário ter o jogo Assetto Corsa instalado para que o ACSv9 funcione corretamente, pois a extração de dados depende da Shared Memory do jogo.
 - Sem o jogo instalado, o ACSv9 não irá funcionar.
 
-🧪 Versão de Demonstração (ACSvDEMO)
+🧪 **Versão de Demonstração (ACSvDEMO)**
 Para contornar essa limitação, foi criada a versão ACSvDEMO, baseada em uma versão anterior do projeto que utiliza arquivos .csv simulando os dados extraídos do jogo.
 
 - O ACSvDEMO está localizado dentro da pasta DEMO/.
