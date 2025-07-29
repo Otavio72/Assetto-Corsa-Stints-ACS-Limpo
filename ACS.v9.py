@@ -347,7 +347,7 @@ img_label1.pack(fill="both", expand = True)
 
 
 
-def grafico(frame_right2,GUI_2):
+def grafico(frame_right2,GUI_2,car_names):
     
 
     def limpar_canvas():

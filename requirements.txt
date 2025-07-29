@@ -1,0 +1,13 @@
+customtkinter==5.2.2
+pillow==11.0.0
+matplotlib==3.9.2
+matplotlib-inline==0.1.7
+pandas==2.2.3
+google-ai-generativelanguage==0.6.10
+google-api-core==2.23.0
+google-api-python-client==2.153.0
+google-auth==2.36.0
+google-auth-httplib2==0.2.0
+google-generativeai==0.8.3
+googleapis-common-protos==1.66.0
+tk==0.1.0
