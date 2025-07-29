@@ -18,7 +18,7 @@ chat = model.start_chat(history=[])
 
 stints = []
 stintsIA = []
-PASTA_CSV = "DEMO/demo_stints"
+PASTA_CSV = "demo_stints"
 
 
 def processar_csv(csv):
@@ -100,22 +100,22 @@ def criar_menu():
     stints_frame = tkc.CTkScrollableFrame(master=GUI4,fg_color="black",width=400,height=300)
     stints_frame.pack(anchor="center",padx=10)
 
-    img_list_track = {"ks_drag": r"DEMO\img\ks_drag.png",
-                      "ks_highlands (layout_short)" : r"DEMO\img\ks_highlands.png",
-                      "ks_red_bull_ring": r"DEMO\img\ks_red_bull_ring.png",
-                      "ks_nurburgring": r"DEMO\img\ks_nurburgring.png",
-                      "ks_vallelunga": r"DEMO\img\ks_vallelunga.png",
-                      "spa": r"DEMO\img\spa.png",
-                      "ks_laguna_seca": r"DEMO\img\ks_laguna_seca.png"
+    img_list_track = {"ks_drag": r"img\ks_drag.png",
+                      "ks_highlands (layout_short)" : r"img\ks_highlands.png",
+                      "ks_red_bull_ring": r"img\ks_red_bull_ring.png",
+                      "ks_nurburgring": r"img\ks_nurburgring.png",
+                      "ks_vallelunga": r"img\ks_vallelunga.png",
+                      "spa": r"img\spa.png",
+                      "ks_laguna_seca": r"img\ks_laguna_seca.png"
                 }   
     
-    img_list_car = {"ks_ferrari_f138": r"DEMO\img\ks_ferrari_f138.png",
-                    "ks_ferrari_f2004": r"DEMO\img\ks_ferrari_f2004.png",
-                    "ks_audi_r18_etron_quattro": r"DEMO\img\ks_audi_r18_etron_quattro.png",
-                    "ks_ferrari_fxx_k": r"DEMO\img\ks_ferrari_fxx_k.png",
-                    "pagani_zonda_r": r"DEMO\img\pagani_zonda_r.png",
-                    "ks_glickenhaus_scg003": r"DEMO\img\ks_glickenhaus_scg003.png",
-                    "ks_ford_gt40": r"DEMO\img\ks_ford_gt40.png"
+    img_list_car = {"ks_ferrari_f138": r"img\ks_ferrari_f138.png",
+                    "ks_ferrari_f2004": r"img\ks_ferrari_f2004.png",
+                    "ks_audi_r18_etron_quattro": r"img\ks_audi_r18_etron_quattro.png",
+                    "ks_ferrari_fxx_k": r"img\ks_ferrari_fxx_k.png",
+                    "pagani_zonda_r": r"img\pagani_zonda_r.png",
+                    "ks_glickenhaus_scg003": r"img\ks_glickenhaus_scg003.png",
+                    "ks_ford_gt40": r"img\ks_ford_gt40.png"
                     }
     
     arquivos = [f for f in os.listdir(PASTA_CSV) if f.endswith(".csv")]
@@ -266,7 +266,7 @@ frame_right.pack(side="right", fill="both", expand=True)
 frame_1 = tkc.CTkFrame(master=frame_right, fg_color="white")
 frame_1.pack(padx=10, pady=100)
 
-ACS_logo = tkc.CTkImage(Image.open("DEMO\\img\\ACSvDEMO_logo.png"), size=(160,130))
+ACS_logo = tkc.CTkImage(Image.open("img\\ACSvDEMO_logo.png"), size=(160,130))
 img_label_logo = tkc.CTkLabel(master=frame_1, text="", image=ACS_logo)
 img_label_logo.pack(padx=30, pady=5)
 
@@ -279,7 +279,7 @@ frame_2.pack(side="bottom")
 label_csv = tkc.CTkLabel(master=frame_2, text="Apenas arquivos .csv",text_color="black")
 label_csv.pack(side="left", padx=5)
 
-CSV_logo = tkc.CTkImage(Image.open("DEMO\\img\\CSV_logo.png"), size=(30,30))
+CSV_logo = tkc.CTkImage(Image.open("img\\CSV_logo.png"), size=(30,30))
 img_CSV_logo = tkc.CTkLabel(master=frame_2, text="", image=CSV_logo)
 img_CSV_logo.pack(side="right", padx=5)
 
@@ -287,7 +287,7 @@ img_CSV_logo.pack(side="right", padx=5)
 frame_left = tkc.CTkFrame(master=GUI, fg_color="white")
 frame_left.pack(side="left", fill="both", expand=True)
 
-wallpaper_left = tkc.CTkImage(Image.open("DEMO\\img\\Wallpaper.png"), size=(400,400))
+wallpaper_left = tkc.CTkImage(Image.open("img\\Wallpaper.png"), size=(400,400))
 img_label1 = tkc.CTkLabel(master=frame_left, text="", image=wallpaper_left)
 img_label1.pack(fill="both", expand = True)
 
