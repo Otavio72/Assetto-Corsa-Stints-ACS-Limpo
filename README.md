@@ -103,13 +103,16 @@ No Linux/macOS:
   source .venv/bin/activate
 
 # acesse o diretorio
-Assetto-Corsa-Stints-ACS-\DEMO\
+cd Assetto-Corsa-Stints-ACS-
 
 Instale as dependências:
   pip install -r requirements.txt
 
+# acesse o dirtetorio da versao demo
+cd DEMO
+
 # Rode
-  ACS.vDEMO.py
+  python ACS.vDEMO.py
 
 ```
 
