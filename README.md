@@ -25,29 +25,29 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 ## 💻 Layout da aplicação
 
 ### Página inicial
-![Página Inicial](https://github.com/Otavio72/assets/blob/main/acs1.png)
+![Página Inicial](https://raw.githubusercontent.com/Otavio72/assets/main/acs1.png)
 
 ### Página de Status
-![Página de Status](https://github.com/Otavio72/assets/blob/main/acs2.png)
+![Página de Status](https://raw.githubusercontent.com/Otavio72/assets/main/acs2.png)
 
 ### Menu de Stints
-![Menu de Stints](https://github.com/Otavio72/assets/blob/main/acs3.png)
+![Menu de Stints](https://raw.githubusercontent.com/Otavio72/assets/main/acs3.png)
 
 ### Pagina de analise
-![Pagina de analise](https://github.com/Otavio72/assets/blob/main/acs4.png)
+![Pagina de analise](https://raw.githubusercontent.com/Otavio72/assets/main/acs4.png)
 
 ### Datalogger no jogo
-![Datalogger no jogo](https://github.com/Otavio72/assets/blob/main/acs5.png)
+![Datalogger no jogo](https://raw.githubusercontent.com/Otavio72/assets/main/acs5.png)
 
 ---
 
 ## 🗂️ GIFs
 
 ## Paginas do ACS
-![Paginas do ACS](https://github.com/Otavio72/assets/blob/main/gif1.gif)
+![Paginas do ACS](https://raw.githubusercontent.com/Otavio72/assets/main/gif1.gif)
 
 ## Datalogger
-![Datalogger](https://github.com/Otavio72/assets/blob/main/gif3.gif)
+![Datalogger](https://raw.githubusercontent.com/Otavio72/assets/main/gif3.gif)
 
 ## Demonstração dentro do jogo
 [Assista à demonstração no YouTube](https://www.youtube.com/watch?v=mdHSS1vnZvM)
@@ -59,7 +59,7 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 ### 🔙 Back end
 - Python
 
-### 🔙 Banco de dados
+### 💾 Banco de dados
 - MySQL
 
 ### 🎨 Interface
@@ -92,16 +92,57 @@ Para contornar essa limitação, foi criada a versão ACSvDEMO, baseada em uma v
 # clonar repositório
 git clone https://github.com/Otavio72/Assetto-Corsa-Stints-ACS-.git
 
+Ative o ambiente virtual:
+  python -m venv .venv
+
+No Windows (PowerShell):
+  ```powershell
+  .venv\Scripts\Activate.ps1
+
+No Linux/macOS:
+  source .venv/bin/activate
+
 # acesse o diretorio
-Assetto-Corsa-Stints-ACS-\DEMO\
+cd Assetto-Corsa-Stints-ACS-
 
 Instale as dependências:
   pip install -r requirements.txt
 
+# acesse o dirtetorio da versao demo
+cd DEMO
+
 # Rode
-  ACS.vDEMO.py
+  python ACS.vDEMO.py
 
 ```
+
+🧠 Melhorias Futuras
+
+🌐 Interface web com Django, HTML, CSS, JavaScript e Bootstrap 5
+Para tornar a análise acessível via navegador e facilitar o uso em diferentes plataformas.
+
+🧱 Refatoração do código para POO (Programação Orientada a Objetos)
+Visando melhor organização, reutilização e manutenção do código.
+
+🧭 Reestruturação da arquitetura
+Centralizar o processamento e análise de dados no servidor, deixando o cliente mais leve.
+
+💾 Criar tabela dedicada à IA no banco de dados
+Implementar uma tabela exclusiva para armazenar os dados enviados e recebidos da API de IA, permitindo melhor organização, rastreabilidade e expansão futura das funcionalidades do engenheiro virtual.
+  
+
+🎮 Extração de mais dados do jogo
+Aprofundar a coleta de informações via Shared Memory para análises mais detalhadas (ex: temperatura dos pneus, consumo de combustível, etc.).
+
+🤖 Substituição da API de IA
+Buscar uma API mais rápida e com menos limitações para melhorar o desempenho e disponibilidade do feedback técnico.
+
+🖥️ Melhorias na interface do Datalogger (dentro do jogo)
+Refinar a visualização e usabilidade das informações exibidas durante as sessões.
+
+🛡️ Tratamento de erros no socket
+Fortalecer a robustez da comunicação entre cliente e servidor, com melhores mensagens de erro e reconexão automática.
+
 
 # Autor
 Otávio Ribeiro
