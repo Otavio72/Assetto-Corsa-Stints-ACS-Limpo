@@ -121,10 +121,8 @@ Visando melhor organização, reutilização e manutenção do código.
 🧭 Reestruturação da arquitetura
 Centralizar o processamento e análise de dados no servidor, deixando o cliente mais leve.
 
-💾 Criar tabela dedicada à IA no banco de dados
-Implementar uma tabela exclusiva para armazenar os dados enviados e recebidos da API de IA, permitindo melhor organização, rastreabilidade e expansão futura das funcionalidades do engenheiro virtual.
+💾 Implementar uma tabela exclusiva para armazenar os dados enviados e recebidos da API de IA, permitindo melhor organização, rastreabilidade e expansão futura das funcionalidades do engenheiro virtual.
   
-
 🎮 Extração de mais dados do jogo
 Aprofundar a coleta de informações via Shared Memory para análises mais detalhadas (ex: temperatura dos pneus, consumo de combustível, etc.).
 
