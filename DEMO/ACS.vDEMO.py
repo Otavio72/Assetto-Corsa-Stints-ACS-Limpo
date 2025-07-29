@@ -18,7 +18,7 @@ chat = model.start_chat(history=[])
 
 stints = []
 stintsIA = []
-PASTA_CSV = "DEMO/demo_stints"
+PASTA_CSV = "DEMO\demo_stints"
 
 
 def processar_csv(csv):
