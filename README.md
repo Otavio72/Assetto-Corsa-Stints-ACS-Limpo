@@ -92,32 +92,16 @@ Para contornar essa limitação, foi criada a versão ACSvDEMO, baseada em uma v
 # clonar repositório
 git clone https://github.com/Otavio72/Assetto-Corsa-Stints-ACS-.git
 
-Ative o ambiente virtual:
-  python -m venv .venv
-
-No Windows (PowerShell):
-  ```powershell
-  .venv\Scripts\Activate.ps1
-
-No Linux/macOS:
-  source .venv/bin/activate
+# acesse o diretorio
+Assetto-Corsa-Stints-ACS-\DEMO\
 
 Instale as dependências:
   pip install -r requirements.txt
 
-Rode as migrações do banco de dados
-  python manage.py migrate
+# Rode
+  ACS.vDEMO.py
 
-python manage.py runserver
-
-Acesse o projeto no navegador:
-http://127.0.0.1:8000/
 ```
-👤 Como acessar o sistema
-Para acessar o Impressa, faça seu cadastro:
-1. Acesse: http://127.0.0.1:8000/usuarios/register/
-2. Preencha o formulário de cadastro
-3. Após o registro, você será redirecionado para a página inicial
 
 # Autor
 Otávio Ribeiro
