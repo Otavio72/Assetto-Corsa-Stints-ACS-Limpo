@@ -25,29 +25,29 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 ## 💻 Layout da aplicação
 
 ### Página inicial
-![Página Inicial](https://raw.githubusercontent.com/Otavio72/assets/main/acs1.png)
+![Página Inicial](assets/acs1.png)
 
 ### Página de Status
-![Página de Status](https://raw.githubusercontent.com/Otavio72/assets/main/acs2.png)
+![Página de Status](assets/acs2.png)
 
 ### Menu de Stints
-![Menu de Stints](https://raw.githubusercontent.com/Otavio72/assets/main/acs3.png)
+![Menu de Stints](assets/acs3.png)
 
 ### Pagina de analise
-![Pagina de analise](https://raw.githubusercontent.com/Otavio72/assets/main/acs4.png)
+![Pagina de analise](assets/acs4.png)
 
 ### Datalogger no jogo
-![Datalogger no jogo](https://raw.githubusercontent.com/Otavio72/assets/main/acs5.png)
+![Datalogger no jogo](assets/acs5.png)
 
 ---
 
 ## 🗂️ GIFs
 
 ## Paginas do ACS
-![Paginas do ACS](https://raw.githubusercontent.com/Otavio72/assets/main/gif1.gif)
+![Paginas do ACS](assets/gif1.gif)
 
 ## Datalogger
-![Datalogger](https://raw.githubusercontent.com/Otavio72/assets/main/gif3.gif)
+![Datalogger](assets/gif3.gif)
 
 ## Demonstração dentro do jogo
 [Assista à demonstração no YouTube](https://www.youtube.com/watch?v=mdHSS1vnZvM)
