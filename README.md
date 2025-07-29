@@ -59,7 +59,7 @@ O **ACS** é uma aplicação local que extrai dados de telemetria do jogo Assett
 ### 🔙 Back end
 - Python
 
-### 🔙 Banco de dados
+### 💾 Banco de dados
 - MySQL
 
 ### 🎨 Interface
@@ -115,6 +115,34 @@ cd DEMO
   python ACS.vDEMO.py
 
 ```
+
+🧠 Melhorias Futuras
+
+🌐 Interface web com Django, HTML, CSS, JavaScript e Bootstrap 5
+Para tornar a análise acessível via navegador e facilitar o uso em diferentes plataformas.
+
+🧱 Refatoração do código para POO (Programação Orientada a Objetos)
+Visando melhor organização, reutilização e manutenção do código.
+
+🧭 Reestruturação da arquitetura
+Centralizar o processamento e análise de dados no servidor, deixando o cliente mais leve.
+
+💾 Criar tabela dedicada à IA no banco de dados
+Implementar uma tabela exclusiva para armazenar os dados enviados e recebidos da API de IA, permitindo melhor organização, rastreabilidade e expansão futura das funcionalidades do engenheiro virtual.
+  
+
+🎮 Extração de mais dados do jogo
+Aprofundar a coleta de informações via Shared Memory para análises mais detalhadas (ex: temperatura dos pneus, consumo de combustível, etc.).
+
+🤖 Substituição da API de IA
+Buscar uma API mais rápida e com menos limitações para melhorar o desempenho e disponibilidade do feedback técnico.
+
+🖥️ Melhorias na interface do Datalogger (dentro do jogo)
+Refinar a visualização e usabilidade das informações exibidas durante as sessões.
+
+🛡️ Tratamento de erros no socket
+Fortalecer a robustez da comunicação entre cliente e servidor, com melhores mensagens de erro e reconexão automática.
+
 
 # Autor
 Otávio Ribeiro
