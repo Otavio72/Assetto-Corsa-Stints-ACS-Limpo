@@ -138,4 +138,4 @@ Fortalecer a robustez da comunicação entre cliente e servidor, com melhores me
 
 # Autor
 Otávio Ribeiro
-www.linkedin.com/in/otávio-ribeiro-57a359197
+[🔗LinkedIn](https://www.linkedin.com/in/otávio-ribeiro-57a359197)
